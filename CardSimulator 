@@ -76,4 +76,3 @@ def draw_multiple_cards(num_draws):
 if __name__ == "__main__":
     num_cards = 5  
     drawn_cards = draw_multiple_cards(num_cards)
-
