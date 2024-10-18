@@ -15,20 +15,15 @@ def roll_random(low, high):
 #Type of card
 def card_suit():
     roll = roll_random(1, 100)
-    if roll <= 25:
+    if 1 <= roll <= 25:
         return "Hearts"
-    elif roll <= 50:
+    elif 26 <= roll <= 50:
         return "Clubs"
-    elif roll <= 75:
+    elif 51 <= roll <= 75:
         return "Diamonds"
-    elif roll <= 100:
+    elif 76 <= roll <= 100:
         return "Spades"
     
-#jokers
-def jokers():
-    roll = roll_random(1, 100)
-    if roll <= 2:
-        return "Joker"
 
 
 #Number of card(Faces)
@@ -42,6 +37,11 @@ def card_face():
     else:
         return royal()  
 
+
+#jokers
+def draw_card():
+    if roll_random(1, 100) <= 2:
+        return "You have drawn a Joker!"
 
 #Special Cards
 def royal():
