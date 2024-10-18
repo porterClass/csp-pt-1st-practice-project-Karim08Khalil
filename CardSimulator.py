@@ -74,5 +74,5 @@ def draw_multiple_cards(num_draws):
     return drawn_cards
 
 num_cards = 5
-drawn_cards = draw_multiple_cards(num_cards)
+draw_multiple_cards(num_cards)
 
