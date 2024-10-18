@@ -13,7 +13,7 @@ def roll_random(low, high):
 
 #Type of card
 def card_suit():
-    roll = roll_random(1, 100)
+    roll = roll_random(1, 102)
     if 1 <= roll <= 25:
         return "Hearts"
     elif 26 <= roll <= 50:
@@ -22,6 +22,8 @@ def card_suit():
         return "Diamonds"
     elif 76 <= roll <= 100:
         return "Spades"
+    elif 101 <= roll <= 102:
+        return "Joker"
     
 
 
@@ -36,11 +38,6 @@ def card_face():
     else:
         return royal()  
 
-
-#jokers
-def draw_card():
-    if roll_random(1, 100) <= 2:
-        return "You have drawn a Joker!"
 
 #Special Cards
 def royal():
@@ -59,11 +56,12 @@ def royal():
 def draw_card():
     face = card_face()
     suit = card_suit()
-    print(f"You have drawn the {face} of {suit}.")
+    if card_suit() == "Joker":
+        print("You have drawn Joker!")
+    else:
+        print(f"You have drawn the {face} of {suit}.")
 
-if __name__ == "__main__":
-    draw_card()
-
+draw_card()
 
 #Draws
 def draw_multiple_cards(num_draws):
@@ -73,10 +71,8 @@ def draw_multiple_cards(num_draws):
         suit = card_suit()
         card = f"{face} of {suit}"
         drawn_cards.append(card)
-        print(f"You have drawn the {card}.")
     return drawn_cards
 
-#Get 5 cards
-if __name__ == "__main__":
-    num_cards = 5
-    drawn_cards = draw_multiple_cards(num_cards)
+num_cards = 5
+drawn_cards = draw_multiple_cards(num_cards)
+
