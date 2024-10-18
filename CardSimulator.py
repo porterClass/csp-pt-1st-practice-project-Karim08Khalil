@@ -21,12 +21,17 @@ def card_suit():
         return "Clubs"
     elif roll <= 75:
         return "Diamonds"
-    else:
+    elif roll <= 100:
         return "Spades"
     
-    
+#jokers
+def jokers():
+    roll = roll_random(1, 100)
+    if roll <= 2:
+        return "Joker"
 
-#Number of card
+
+#Number of card(Faces)
 def card_face():
     roll = roll_random(1, 10)
     if roll == 1:
@@ -49,7 +54,7 @@ def royal():
         return "Queen"
     else:
         return "King"
-
+    
 
 #print statement of card choosen
 def draw_card():
@@ -74,5 +79,5 @@ def draw_multiple_cards(num_draws):
 
 #Get 5 cards
 if __name__ == "__main__":
-    num_cards = 5  
+    num_cards = 5
     drawn_cards = draw_multiple_cards(num_cards)
