@@ -22,7 +22,7 @@ def card_suit():
         return "Diamonds"
     elif 76 <= roll <= 100:
         return "Spades"
-    elif 101 <= roll <= 102:
+    else:
         return "Joker"
     
 
@@ -61,18 +61,12 @@ def draw_card():
     else:
         print(f"You have drawn the {face} of {suit}.")
 
+#MultipleDraws
+
+#Calling the function
+
+draw_card() 
 draw_card()
-
-#Multiple Draws
-def draw_multiple_cards(num_draws):
-    drawn_cards = []
-    for _ in range(num_draws):
-        face = card_face()
-        suit = card_suit()
-        card = f"{face} of {suit}"
-        drawn_cards.append(card)
-    return drawn_cards
-
-num_cards = 5
-draw_multiple_cards(num_cards)
-
+draw_card()
+draw_card()
+draw_card()
