@@ -63,7 +63,7 @@ def draw_card():
 
 draw_card()
 
-#Draws
+#Multiple Draws
 def draw_multiple_cards(num_draws):
     drawn_cards = []
     for _ in range(num_draws):
