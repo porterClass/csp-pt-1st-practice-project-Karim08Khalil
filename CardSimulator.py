@@ -1,7 +1,6 @@
 #Karim Khalil
-#10/25/2024
 #Period 3rd
-
+#October 25,2024
 
 #Creating a random sequence
 import random
