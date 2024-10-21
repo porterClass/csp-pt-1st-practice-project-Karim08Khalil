@@ -23,6 +23,7 @@ def card_suit():
     elif 76 <= roll <= 100:
         return "Spades"
 
+
 #Getting a joker
 def joker():
     num = roll_random(1, 100)
