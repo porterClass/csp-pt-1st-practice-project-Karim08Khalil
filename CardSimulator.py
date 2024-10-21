@@ -13,7 +13,7 @@ def roll_random(low, high):
 
 #Type of card
 def card_suit():
-    roll = roll_random(1, 102)
+    roll = roll_random(1, 100)
     if 1 <= roll <= 25:
         return "Hearts"
     elif 26 <= roll <= 50:
@@ -22,21 +22,42 @@ def card_suit():
         return "Diamonds"
     elif 76 <= roll <= 100:
         return "Spades"
-    else:
-        return "Joker"
+
+#Getting a joker
+def joker():
+    num = roll_random(1, 100)
+    if 1<= num <= 2:
+       return "Joker"
+    else: 
+       return card_suit()
+
     
 
 
 #Number of card(Faces)
 def card_face():
-    roll = roll_random(1, 10)
-    if roll == 1:
-        return "Ace"
-    elif 2 <= roll <= 9:
-        face_values = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
-        return face_values[roll - 2]  
-    else:
-        return royal()  
+  face = roll_random(1,10)
+  if face == 1 :
+    return "Ace"
+  elif face == 2 :
+    return "Two"
+  elif face == 3 :
+    return "Three"
+  elif face == 4 :
+    return "Four"
+  elif face == 5 :
+    return "Five"
+  elif face == 6 :
+    return "Six"
+  elif face == 7 :
+    return "Seven"
+  elif face == 8 :
+    return "Eight"
+  elif face == 9 :
+    return "Nine"
+  elif face == 10:
+     return royal()
+
 
 
 #Special Cards
@@ -48,18 +69,17 @@ def royal():
         return "Jack"
     elif roll == 3:
         return "Queen"
-    else:
+    elif roll == 4:
         return "King"
+    
     
 
 #print statement of card choosen
 def draw_card():
-    face = card_face()
-    suit = card_suit()
-    if card_suit() == "Joker":
+    if joker() == "Joker" :
         print("You have drawn Joker!")
     else:
-        print(f"You have drawn the {face} of {suit}.")
+        print("You have drawn the", card_face(), "of", card_suit() + ".")
 
 #MultipleDraws
 
