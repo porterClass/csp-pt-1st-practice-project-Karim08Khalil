@@ -35,33 +35,19 @@ def joker():
     
 
 
-#Number of card(Faces)
+#Number of card(regular numbers)
 def card_face():
-  face = roll_random(1,10)
-  if face == 1 :
-    return "Ace"
-  elif face == 2 :
-    return "Two"
-  elif face == 3 :
-    return "Three"
-  elif face == 4 :
-    return "Four"
-  elif face == 5 :
-    return "Five"
-  elif face == 6 :
-    return "Six"
-  elif face == 7 :
-    return "Seven"
-  elif face == 8 :
-    return "Eight"
-  elif face == 9 :
-    return "Nine"
-  elif face == 10:
-     return royal()
+    roll = roll_random(1, 10)
+    if roll == 1:
+        return "Ace"
+    elif 2 <= roll <= 9:
+        face_values = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+        return face_values[roll - 2]  
+    else:
+        return royal()   
 
 
-
-#Special Cards
+#Royal cards(special cards)
 def royal():
     roll = roll_random(1, 4)
     if roll == 1:
@@ -75,7 +61,7 @@ def royal():
     
     
 
-#print statement of card choosen
+#print statement of card choosen( drawing the cards)
 def draw_card():
     if joker() == "Joker" :
         print("You have drawn Joker!")
@@ -84,7 +70,7 @@ def draw_card():
 
 #MultipleDraws
 
-#Calling the function
+#Calling the function(5 times)
 
 draw_card() 
 draw_card()
